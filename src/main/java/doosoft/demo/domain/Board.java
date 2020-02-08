@@ -49,7 +49,7 @@ public class Board implements Serializable {
         this.subTitle = subTitle;
         this.content = content;
         this.boardType = boardType;
-        this.createdDate = createDate;
+        this.createdDate = createdDate;
         this.updatedDate = updatedDate;
         this.user = user;
     }

@@ -3,12 +3,11 @@ package doosoft.demo.repository;
 import doosoft.demo.domain.Board;
 import doosoft.demo.domain.User;
 import doosoft.demo.domain.enums.BoardType;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
@@ -17,16 +16,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 @RunWith(SpringRunner.class)
-@DataJdbcTest
+@DataJpaTest
 public class JpaMappingTest {
     private final String boardTestTitle = "테스트";
     private final String email = "test@gmail.com";
 
     @Autowired
-    UserRepository userRepository;
+    BoardRepository boardRepository;
 
     @Autowired
-    BoardRepository boardRepository;
+    UserRepository userRepository;
 
     @Before
     public void init() {
